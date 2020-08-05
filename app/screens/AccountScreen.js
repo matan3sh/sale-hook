@@ -2,20 +2,19 @@ import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
 import Screen from '../components/Screen';
-import ListItem from '../components/ListItem';
 import colors from '../config/colors';
 import Icon from '../components/Icon';
-import ListItemSeparator from '../components/ListItemSeparator';
+import { ListItem, ListItemSeparator } from '../components/lists';
 
 const menuItems = [
   {
     title: 'My Listings',
-    icon: { name: 'format-list-bulleted', backgroundColor: colors.primary }
+    icon: { name: 'format-list-bulleted', backgroundColor: colors.primary },
   },
   {
     title: 'My Messages',
-    icon: { name: 'email', backgroundColor: colors.secondary }
-  }
+    icon: { name: 'email', backgroundColor: colors.secondary },
+  },
 ];
 
 const AccountScreen = () => {
@@ -58,9 +57,9 @@ export default AccountScreen;
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: colors.light
+    backgroundColor: colors.light,
   },
   container: {
-    marginVertical: 20
-  }
+    marginVertical: 20,
+  },
 });
