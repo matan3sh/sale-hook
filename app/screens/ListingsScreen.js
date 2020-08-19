@@ -3,7 +3,7 @@ import { StyleSheet, FlatList } from 'react-native';
 
 import Card from '../components/Card';
 import Screen from '../components/Screen';
-
+import routes from '../navigation/routes';
 import colors from '../config/colors';
 
 const listings = [
@@ -11,17 +11,17 @@ const listings = [
     id: 1,
     title: 'Mr. Incredible (Blue Suit)',
     price: 1580,
-    image: require('../assets/mr.incredible.jpg')
+    image: require('../assets/mr.incredible.jpg'),
   },
   {
     id: 2,
     title: 'T-Bone',
     price: 170,
-    image: require('../assets/T-Bone.jpg')
-  }
+    image: require('../assets/T-Bone.jpg'),
+  },
 ];
 
-const ListingsScreen = () => {
+const ListingsScreen = ({ navigation }) => {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -32,6 +32,7 @@ const ListingsScreen = () => {
             title={item.title}
             subTitle={`$${item.price}`}
             image={item.image}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />
@@ -44,6 +45,6 @@ export default ListingsScreen;
 const styles = StyleSheet.create({
   screen: {
     padding: 20,
-    backgroundColor: colors.light
-  }
+    backgroundColor: colors.light,
+  },
 });
