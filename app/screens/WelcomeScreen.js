@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground, Image, Text } from 'react-native';
 import Button from '../components/Button';
+import routes from '../navigation/routes';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <ImageBackground
       style={styles.background}
@@ -14,8 +15,15 @@ const WelcomeScreen = () => {
         <Text style={styles.tagline}>Funko-Pop Market</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <Button title='Login' />
-        <Button title='Register' color='secondary' />
+        <Button
+          title='Login'
+          onPress={() => navigation.navigate(routes.LOGIN)}
+        />
+        <Button
+          title='Register'
+          color='secondary'
+          onPress={() => navigation.navigate(routes.REGISTER)}
+        />
       </View>
     </ImageBackground>
   );
